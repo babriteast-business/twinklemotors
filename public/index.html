@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twinkle Showroom Soro | Hero MotoCorp Authorized Dealer | Bikes & Scooters Balasore Odisha</title>
+<meta name="description" content="Twinkle Showroom - Hero MotoCorp Authorized Dealer in Soro, Balasore, Odisha. Buy Hero bikes & scooters. EMI available. Call 7205308558.">
+<meta name="keywords" content="Hero MotoCorp dealer Soro, bike showroom Balasore, Hero bike Odisha, Splendor Plus Soro, Xtreme 160R Balasore, two wheeler dealer Soro, Twinkle Showroom">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://twinklemotors.onrender.com/">
+<meta property="og:title" content="Twinkle Showroom | Hero MotoCorp Dealer Soro, Balasore">
+<meta property="og:description" content="Buy Hero bikes & scooters in Soro, Balasore. EMI, exchange, insurance. Call 7205308558.">
+<meta property="og:type" content="business.business">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Twinkle Showroom","telephone":["+916788221711","+917205308558"],"address":{"@type":"PostalAddress","streetAddress":"Ground Floor, Uttareswar","addressLocality":"Soro","addressRegion":"Balasore, Odisha","postalCode":"756045","addressCountry":"IN"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}],"priceRange":"₹64,900 - ₹1,75,000"}</script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Three.js loaded as classic script — NO importmap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#E8001D;--black:#05050A;--dark:#0D0D15;--silver:#C0C0C8;--white:#F0F0F0;--dim:#555566}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden}
+#loader{position:fixed;inset:0;z-index:9999;background:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;transition:opacity 0.8s}
+#loader.gone{opacity:0;pointer-events:none}
+.l-logo{font-family:'Bebas Neue';font-size:3rem;letter-spacing:0.2em}
+.l-sub{font-size:0.65rem;color:var(--dim);letter-spacing:0.2em;text-transform:uppercase}
+.l-bar{width:220px;height:2px;background:rgba(255,255,255,0.08)}
+.l-fill{height:100%;background:var(--red);width:0%;transition:width 0.3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:linear-gradient(to bottom,rgba(5,5,10,0.95),transparent);backdrop-filter:blur(8px)}
+.nl{display:flex;align-items:center;gap:0.8rem}
+.nh{width:32px;height:32px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:0.95rem;color:#fff;flex-shrink:0}
+.nb{font-family:'Bebas Neue';font-size:1.2rem;letter-spacing:0.1em}
+.ns{font-size:0.52rem;color:var(--silver);letter-spacing:0.14em;text-transform:uppercase}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--silver);text-decoration:none;font-size:0.74rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:#fff}
+.nc{display:flex;gap:0.6rem}
+.btn-c{background:var(--red);color:#fff;border:none;padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;font-family:'Inter';text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;transition:opacity 0.2s}
+.btn-c:hover{opacity:0.85}
+.btn-g{background:transparent;color:var(--silver);border:1px solid rgba(192,192,200,0.3);padding:0.5rem 1rem;font-size:0.72rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;font-family:'Inter';transition:all 0.2s}
+.btn-g:hover{color:#fff;border-color:#fff}
+#hero{height:100vh;position:relative;overflow:hidden}
+#hc{position:absolute;inset:0;width:100%;height:100%}
+.hov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 4rem 5rem;pointer-events:none;background:linear-gradient(to right,rgba(5,5,10,0.9) 0%,rgba(5,5,10,0.4) 50%,transparent 100%)}
+.htag{font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.7rem}
+.htag::before{content:'';display:block;width:28px;height:1px;background:var(--red)}
+.h1{font-family:'Bebas Neue';font-size:clamp(4rem,9vw,8rem);line-height:0.9;letter-spacing:0.02em;margin-bottom:1.2rem}
+.h1 span{color:var(--red)}
+.hsub{font-size:0.92rem;font-weight:300;color:var(--silver);line-height:1.7;max-width:400px;margin-bottom:0.5rem}
+.hloc{font-size:0.75rem;color:var(--dim);margin-bottom:2rem;display:flex;align-items:center;gap:0.4rem}
+.hloc span{color:var(--red)}
+.hbtns{display:flex;gap:0.8rem;pointer-events:all;flex-wrap:wrap}
+.bp{background:var(--red);color:#fff;border:none;padding:0.82rem 2rem;font-family:'Inter';font-size:0.78rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));transition:background 0.2s}
+.bp:hover{background:#c0001a}
+.bg2{background:transparent;color:var(--silver);border:1px solid rgba(192,192,200,0.3);padding:0.82rem 1.8rem;font-family:'Inter';font-size:0.78rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-flex;align-items:center}
+.bg2:hover{color:#fff;border-color:#fff}
+.hscroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.4rem;color:var(--dim);font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;animation:bounce 2s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+.mq{background:#0a0a12;border-top:1px solid rgba(232,0,29,0.2);border-bottom:1px solid rgba(232,0,29,0.2);overflow:hidden;padding:0.7rem 0}
+.mtrack{display:flex;gap:3rem;animation:mq 22s linear infinite;white-space:nowrap}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mi{font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:0.6rem}
+.mi::before{content:'';width:4px;height:4px;background:var(--red);border-radius:50%;flex-shrink:0}
+section{padding:5rem 3rem}
+.sl{font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:0.5rem}
+.st{font-family:'Bebas Neue';font-size:clamp(2.2rem,4vw,3.5rem);letter-spacing:0.03em;line-height:1}
+#showroom{background:var(--dark);padding:5rem 3rem}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:2rem}
+.tabs{display:flex;gap:0.3rem;flex-wrap:wrap}
+.tab{padding:0.42rem 1rem;font-size:0.7rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;background:transparent;color:var(--dim);border:1px solid rgba(85,85,102,0.35);cursor:pointer;transition:all 0.2s;font-family:'Inter'}
+.tab.active,.tab:hover{background:var(--red);color:#fff;border-color:var(--red)}
+#scw{width:100%;height:480px;position:relative;border:1px solid rgba(255,255,255,0.04);overflow:hidden;cursor:grab}
+#scw:active{cursor:grabbing}
+#sc{width:100%;height:100%;display:block}
+.ch{position:absolute;bottom:1rem;right:1rem;font-size:0.58rem;color:var(--dim);letter-spacing:0.1em;text-transform:uppercase}
+.ch::before{content:'↺ ';color:var(--red)}
+.mbar{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 2rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);flex-wrap:wrap;gap:1.2rem}
+.mname{font-family:'Bebas Neue';font-size:1.9rem;letter-spacing:0.05em}
+.mbadge{font-size:0.6rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.1em;margin-top:-4px}
+.mspecs{display:flex;gap:2rem}
+.sv{font-family:'Bebas Neue';font-size:1.3rem;color:var(--silver)}
+.sk{font-size:0.58rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.1em}
+.mprice{font-family:'Bebas Neue';font-size:1.7rem}
+.mprice sub{font-family:'Inter';font-size:0.6rem;color:var(--dim);font-weight:400;text-transform:uppercase;letter-spacing:0.08em;vertical-align:middle;margin-left:0.3rem}
+.mcta{background:var(--red);color:#fff;border:none;padding:0.65rem 1.6rem;font-size:0.75rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;font-family:'Inter';transition:opacity 0.2s}
+.mcta:hover{opacity:0.85}
+#models{background:var(--black)}
+.mgh{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:2rem}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px}
+.mc{background:var(--dark);padding:1.8rem;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+.mc::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width 0.3s}
+.mc:hover::after{width:100%}
+.mc:hover{background:#111118;transform:translateY(-4px)}
+.mc-badge{position:absolute;top:1rem;right:1rem;background:var(--red);color:#fff;font-size:0.58rem;font-weight:600;padding:0.18rem 0.55rem;letter-spacing:0.08em;text-transform:uppercase}
+.mc-vis{height:120px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.mc-vis svg{width:100%;height:100%;filter:drop-shadow(0 0 16px rgba(232,0,29,0.12));transition:filter 0.3s}
+.mc:hover .mc-vis svg{filter:drop-shadow(0 0 28px rgba(232,0,29,0.32))}
+.mc-name{font-family:'Bebas Neue';font-size:1.5rem;letter-spacing:0.04em;margin-bottom:0.2rem}
+.mc-type{font-size:0.62rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.8rem}
+.mc-sp{display:flex;gap:1.2rem;margin-bottom:1.2rem}
+.mc-pr{display:flex;align-items:baseline;gap:0.3rem;margin-bottom:1rem}
+.mc-prn{font-family:'Bebas Neue';font-size:1.6rem}
+.mc-prl{font-size:0.6rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.07em}
+.mc-btn{width:100%;background:transparent;color:var(--red);border:1px solid var(--red);padding:0.55rem;font-size:0.72rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:'Inter'}
+.mc-btn:hover{background:var(--red);color:#fff}
+#address{background:var(--dark)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem}
+.ai{display:flex;flex-direction:column;gap:2rem}
+.ab{display:flex;gap:1.2rem;align-items:flex-start}
+.aico{width:44px;height:44px;background:rgba(232,0,29,0.08);border:1px solid rgba(232,0,29,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem}
+.albl{font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:0.3rem}
+.aval{font-size:0.9rem;color:var(--silver);line-height:1.6}
+.cbtns{display:flex;flex-direction:column;gap:0.6rem;margin-top:0.6rem}
+.cbtn{display:inline-flex;align-items:center;gap:0.6rem;background:var(--red);color:#fff;padding:0.7rem 1.4rem;font-size:0.8rem;font-weight:600;letter-spacing:0.06em;text-decoration:none;transition:opacity 0.2s}
+.cbtn:hover{opacity:0.85}
+.cbtn2{background:transparent;color:var(--silver);border:1px solid rgba(192,192,200,0.3);padding:0.65rem 1.4rem}
+.cbtn2:hover{color:#fff;border-color:#fff}
+.svcs{display:flex;flex-direction:column;gap:0.5rem;margin-top:0.4rem}
+.svc{display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;color:var(--silver)}
+.svc::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%;flex-shrink:0}
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 1.5rem;margin-top:0.4rem}
+.hrow{display:flex;justify-content:space-between;font-size:0.78rem;padding:0.3rem 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.hday{color:var(--dim)}
+.htime{color:var(--silver)}
+.mapbox{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);padding:3rem 2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;text-align:center;min-height:340px}
+.mappin{font-size:3rem}
+.mapt{color:var(--silver);font-size:0.85rem;line-height:1.7}
+.mapt strong{color:#fff;display:block;font-family:'Bebas Neue';font-size:1.4rem;letter-spacing:0.08em;margin-bottom:0.3rem}
+.mapbtn{background:var(--red);color:#fff;padding:0.65rem 1.5rem;font-size:0.75rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:opacity 0.2s}
+.mapbtn:hover{opacity:0.85}
+#why{background:var(--black);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+#wc{width:100%;height:100%;display:block}
+.wlist{display:flex;flex-direction:column;gap:1.6rem}
+.wi{display:flex;gap:1.1rem;align-items:flex-start;padding-bottom:1.6rem;border-bottom:1px solid rgba(255,255,255,0.04)}
+.wi:last-child{border-bottom:none;padding-bottom:0}
+.wico{width:42px;height:42px;background:rgba(232,0,29,0.08);border:1px solid rgba(232,0,29,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.wt{font-weight:600;font-size:0.88rem;margin-bottom:0.3rem}
+.wd{font-size:0.78rem;color:var(--dim);line-height:1.6}
+#booking{background:var(--dark)}
+.bw{max-width:640px;margin:0 auto;text-align:center}
+.bsub{font-size:0.88rem;color:var(--silver);font-weight:300;line-height:1.7;margin:0.8rem auto 2.5rem;max-width:420px}
+.bf{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;text-align:left}
+.fg{display:flex;flex-direction:column;gap:0.32rem}
+.fg.full{grid-column:1/-1}
+.fg label{font-size:0.62rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver)}
+.fg input,.fg select,.fg textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:var(--white);padding:0.68rem 0.9rem;font-family:'Inter';font-size:0.82rem;outline:none;transition:border-color 0.2s;-webkit-appearance:none;width:100%}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--red)}
+.fg select option{background:var(--dark)}
+.fg textarea{resize:vertical;min-height:80px}
+.bfsub{grid-column:1/-1;background:var(--red);color:#fff;border:none;padding:0.9rem;font-family:'Inter';font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));transition:background 0.2s;margin-top:0.4rem}
+.bfsub:hover{background:#c0001a}
+.bfn{grid-column:1/-1;text-align:center;font-size:0.65rem;color:var(--dim)}
+.bfn a{color:var(--red)}
+footer{background:#030306;padding:3rem;display:flex;justify-content:space-between;align-items:flex-start;border-top:1px solid rgba(255,255,255,0.04);flex-wrap:wrap;gap:2rem}
+.flogo{font-family:'Bebas Neue';font-size:1.4rem;letter-spacing:0.1em;margin-bottom:0.3rem}
+.ftag{font-size:0.6rem;color:var(--dim);letter-spacing:0.14em;text-transform:uppercase}
+.faddr{font-size:0.75rem;color:var(--dim);line-height:1.8;margin-top:0.8rem}
+.faddr a{color:var(--red);text-decoration:none}
+.fnav h4{font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--silver);margin-bottom:0.8rem}
+.fnav ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.fnav a{font-size:0.75rem;color:var(--dim);text-decoration:none;transition:color 0.2s}
+.fnav a:hover{color:#fff}
+.fhero{text-align:center}
+.fauth{font-size:0.58rem;color:var(--dim);letter-spacing:0.14em;text-transform:uppercase}
+.fhn{font-family:'Bebas Neue';font-size:2.2rem;color:var(--red);letter-spacing:0.15em}
+.fbot{background:#030306;text-align:center;padding:1rem 3rem;font-size:0.62rem;color:var(--dim);letter-spacing:0.06em;border-top:1px solid rgba(255,255,255,0.02)}
+.mov{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:500;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+.mov.open{display:flex}
+.mbox{background:var(--dark);border:1px solid rgba(255,255,255,0.07);padding:2.5rem;width:90%;max-width:420px;position:relative}
+.mcl{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--dim);font-size:1.1rem;cursor:pointer;transition:color 0.2s;padding:0.3rem 0.5rem}
+.mcl:hover{color:#fff}
+.mtit{font-family:'Bebas Neue';font-size:1.9rem;letter-spacing:0.05em;margin-bottom:0.2rem}
+.msub{font-size:0.75rem;color:var(--dim);margin-bottom:1.5rem}
+.msub b{color:var(--red)}
+.mform{display:flex;flex-direction:column;gap:0.75rem}
+.mform .fg input,.mform .fg select{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:var(--white);padding:0.68rem 0.9rem;font-family:'Inter';font-size:0.82rem;outline:none;transition:border-color 0.2s;width:100%;-webkit-appearance:none}
+.mform .fg input:focus,.mform .fg select:focus{border-color:var(--red)}
+.mform .fg select option{background:var(--dark)}
+.msub2{background:var(--red);color:#fff;border:none;padding:0.82rem;font-family:'Inter';font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));transition:background 0.2s;margin-top:0.3rem}
+.msub2:hover{background:#c0001a}
+#toast{position:fixed;bottom:2rem;right:2rem;background:#16a34a;color:#fff;padding:0.9rem 1.4rem;font-size:0.8rem;font-weight:500;z-index:9998;display:none;align-items:center;gap:0.5rem}
+#toast.show{display:flex;animation:su 0.3s ease}
+@keyframes su{from{transform:translateY(12px);opacity:0}to{transform:translateY(0);opacity:1}}
+.fcall{position:fixed;bottom:1.5rem;left:1.5rem;z-index:400}
+.fcbtn{display:flex;align-items:center;gap:0.6rem;background:var(--red);color:#fff;padding:0.65rem 1.1rem;font-size:0.72rem;font-weight:600;text-decoration:none;transition:opacity 0.2s;box-shadow:0 4px 20px rgba(232,0,29,0.4)}
+.fcbtn:hover{opacity:0.9}
+@media(max-width:900px){nav{padding:1rem 1.5rem}.nav-links{display:none}.hov{padding:0 1.5rem 3.5rem}section{padding:4rem 1.5rem}#showroom,#models,#address,#booking,#why{padding:4rem 1.5rem}.ag{grid-template-columns:1fr}#why{grid-template-columns:1fr}.bf{grid-template-columns:1fr}.fg.full,.bfsub,.bfn{grid-column:1}footer{flex-direction:column}#scw{height:320px}.mbar{flex-direction:column;align-items:flex-start;gap:1rem}}
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="l-logo">TWINKLE</div>
+  <div class="l-sub">Hero MotoCorp · Soro, Balasore</div>
+  <div class="l-bar"><div class="l-fill" id="lfill"></div></div>
+</div>
+
+<nav>
+  <div class="nl">
+    <div class="nh">H</div>
+    <div><div class="nb">TWINKLE SHOWROOM</div><div class="ns">Hero MotoCorp · Authorized Dealer · Soro, Balasore</div></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#showroom">3D Showroom</a></li>
+    <li><a href="#models">Models</a></li>
+    <li><a href="#address">Visit Us</a></li>
+    <li><a href="#booking">Book Ride</a></li>
+  </ul>
+  <div class="nc">
+    <a href="tel:+917205308558" class="btn-c">📞 Call Now</a>
+    <button class="btn-g" onclick="openModal('a Hero bike')">Appointment</button>
+  </div>
+</nav>
+
+<section id="hero">
+  <canvas id="hc"></canvas>
+  <div class="hov">
+    <div class="htag">Hero MotoCorp · Authorized Dealer</div>
+    <h1 class="h1">BORN<br>TO<br><span>RIDE</span></h1>
+    <p class="hsub">India's #1 two-wheeler brand — now at your doorstep in Soro, Balasore.</p>
+    <div class="hloc">📍 <span>Ground Floor, Uttareswar, Soro, Balasore — 756045</span></div>
+    <div class="hbtns">
+      <button class="bp" onclick="document.getElementById('showroom').scrollIntoView({behavior:'smooth'})">🏍️ Explore 3D Showroom</button>
+      <a href="tel:+917205308558" class="bg2">📞 7205308558</a>
+    </div>
+  </div>
+  <div class="hscroll"><span>↓</span> Scroll</div>
+</section>
+
+<div class="mq"><div class="mtrack" id="mtrack"></div></div>
+
+<section id="showroom">
+  <div class="sh">
+    <div><div class="sl">Interactive 3D Showroom</div><h2 class="st">PICK YOUR MACHINE</h2></div>
+    <div class="tabs" id="stabs">
+      <button class="tab active" onclick="filterShow('all',this)">All</button>
+      <button class="tab" onclick="filterShow('bike',this)">Bikes</button>
+      <button class="tab" onclick="filterShow('scooter',this)">Scooters</button>
+    </div>
+  </div>
+  <div id="scw"><canvas id="sc"></canvas><div class="ch">Drag to rotate · Scroll to zoom</div></div>
+  <div class="mbar">
+    <div>
+      <div class="mname" id="mn">—</div>
+      <div class="mbadge" id="mb"></div>
+      <div class="mspecs" id="ms"></div>
+    </div>
+    <div class="mprice" id="mp"></div>
+    <button class="mcta" id="mct">Book Test Ride</button>
+  </div>
+</section>
+
+<section id="models">
+  <div class="mgh">
+    <div><div class="sl">Our Fleet</div><h2 class="st">ALL MODELS</h2></div>
+    <div class="tabs" id="gtabs">
+      <button class="tab active" onclick="filterGrid('all',this)">All</button>
+      <button class="tab" onclick="filterGrid('bike',this)">Bikes</button>
+      <button class="tab" onclick="filterGrid('scooter',this)">Scooters</button>
+    </div>
+  </div>
+  <div class="mgrid" id="mgrid"><div style="color:var(--dim);font-size:0.8rem;padding:2rem 0">Loading…</div></div>
+</section>
+
+<section id="address">
+  <div class="sl">Find Us</div>
+  <h2 class="st">VISIT TWINKLE SHOWROOM</h2>
+  <div class="ag">
+    <div class="ai">
+      <div class="ab"><div class="aico">📍</div><div><div class="albl">Address</div><div class="aval">Ground Floor, Uttareswar<br>Soro, Balasore, Odisha — 756045</div></div></div>
+      <div class="ab"><div class="aico">📞</div><div>
+        <div class="albl">Call Us</div>
+        <div class="cbtns">
+          <a href="tel:+917205308558" class="cbtn">📞 7205308558</a>
+          <a href="tel:+916788221711" class="cbtn cbtn2">📞 06788-221711</a>
+        </div>
+      </div></div>
+      <div class="ab"><div class="aico">🔧</div><div><div class="albl">Services</div><div class="svcs">
+        <div class="svc">Two-wheeler Sales (Bikes & Scooters)</div>
+        <div class="svc">Bike Service & Maintenance</div>
+        <div class="svc">Genuine Spare Parts</div>
+        <div class="svc">Financing & EMI Options</div>
+        <div class="svc">Vehicle Exchange</div>
+        <div class="svc">Insurance Assistance</div>
+      </div></div></div>
+      <div class="ab"><div class="aico">🕐</div><div><div class="albl">Working Hours</div><div class="hgrid">
+        <div class="hrow"><span class="hday">Mon–Fri</span><span class="htime">9 AM – 7 PM</span></div>
+        <div class="hrow"><span class="hday">Saturday</span><span class="htime">9 AM – 7 PM</span></div>
+        <div class="hrow"><span class="hday">Sunday</span><span class="htime">10 AM – 5 PM</span></div>
+      </div></div></div>
+    </div>
+    <div class="mapbox">
+      <div class="mappin">📍</div>
+      <div class="mapt"><strong>TWINKLE SHOWROOM</strong>Ground Floor, Uttareswar<br>Soro, Balasore, Odisha — 756045<br>Hero MotoCorp Authorized Dealer</div>
+      <a href="https://maps.google.com/?q=Twinkle+Showroom+Soro+Balasore+Odisha" target="_blank" rel="noopener" class="mapbtn">🗺️ Open in Google Maps</a>
+      <a href="tel:+917205308558" class="cbtn" style="margin-top:0.3rem">📞 Call: 7205308558</a>
+    </div>
+  </div>
+</section>
+
+<section id="why" style="padding:5rem 3rem">
+  <div style="height:400px"><canvas id="wc"></canvas></div>
+  <div>
+    <div class="sl">Why Choose Us</div>
+    <h2 class="st" style="margin-bottom:2rem">YOUR TRUSTED<br>HERO PARTNER</h2>
+    <div class="wlist">
+      <div class="wi"><div class="wico">🏆</div><div><div class="wt">Official Hero MotoCorp Dealer</div><div class="wd">Genuine vehicles, original parts, factory-trained technicians and direct Hero warranty.</div></div></div>
+      <div class="wi"><div class="wico">💰</div><div><div class="wt">Easy EMI & Zero Down Payment</div><div class="wd">Instant loan approvals with leading banks and NBFCs. Take your bike home today.</div></div></div>
+      <div class="wi"><div class="wico">🔄</div><div><div class="wt">Best Exchange Value</div><div class="wd">Best price for your old two-wheeler. Upgrade to a new Hero seamlessly.</div></div></div>
+      <div class="wi"><div class="wico">🛡️</div><div><div class="wt">Insurance & Registration</div><div class="wd">Complete assistance with insurance, RTO registration and all paperwork — here.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="bw">
+    <div class="sl">Appointments</div>
+    <h2 class="st">BOOK A TEST RIDE</h2>
+    <p class="bsub">Fill in your details. Our team confirms your slot within 2 hours.</p>
+    <form class="bf" onsubmit="handleBook(event)">
+      <div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your full name" required></div>
+      <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="10-digit number" required></div>
+      <div class="fg"><label>Model</label><select name="model" id="bsel"><option value="">Select a model</option></select></div>
+      <div class="fg"><label>Preferred Date</label><input type="date" name="date" required></div>
+      <div class="fg full"><label>Message (Optional)</label><textarea name="message" placeholder="Colour preference, questions…"></textarea></div>
+      <button type="submit" class="bfsub">✅ Confirm Appointment</button>
+      <div class="bfn">We call within 2 hours · No spam · Call: <a href="tel:+917205308558">7205308558</a></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="flogo">TWINKLE SHOWROOM</div>
+    <div class="ftag">Hero MotoCorp · Authorized Dealer</div>
+    <div class="faddr">Ground Floor, Uttareswar, Soro<br>Balasore, Odisha — 756045<br><a href="tel:+917205308558">📞 7205308558</a> · <a href="tel:+916788221711">06788-221711</a></div>
+  </div>
+  <div class="fnav">
+    <h4>Quick Links</h4>
+    <ul>
+      <li><a href="#showroom">3D Showroom</a></li>
+      <li><a href="#models">All Models</a></li>
+      <li><a href="#address">Visit Us</a></li>
+      <li><a href="#booking">Book Test Ride</a></li>
+      <li><a href="/admin.html">Admin Login</a></li>
+    </ul>
+  </div>
+  <div class="fnav">
+    <h4>Services</h4>
+    <ul>
+      <li><a href="#why">Bike Sales</a></li>
+      <li><a href="#why">Bike Service</a></li>
+      <li><a href="#why">Spare Parts</a></li>
+      <li><a href="#why">EMI & Finance</a></li>
+      <li><a href="#why">Vehicle Exchange</a></li>
+    </ul>
+  </div>
+  <div class="fhero">
+    <div class="fauth">Authorized Dealer</div>
+    <div class="fhn">HERO</div>
+    <div style="font-size:0.55rem;color:var(--dim);letter-spacing:0.12em">MOTO CORP</div>
+  </div>
+</footer>
+<div class="fbot">© 2024 Twinkle Showroom · Hero MotoCorp Authorized Dealer · Soro, Balasore, Odisha</div>
+
+<div class="fcall"><a href="tel:+917205308558" class="fcbtn">📞 7205308558</a></div>
+
+<div class="mov" id="mov" onclick="if(event.target===this)closeMod()">
+  <div class="mbox">
+    <button class="mcl" onclick="closeMod()">✕</button>
+    <div class="mtit">BOOK A SLOT</div>
+    <div class="msub">Test ride the <b id="mn2">—</b></div>
+    <form class="mform" onsubmit="handleMod(event)">
+      <div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your full name" required></div>
+      <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="10-digit number" required></div>
+      <div class="fg"><label>Model</label><select name="model" id="msel2"><option value="">Select model</option></select></div>
+      <div class="fg"><label>Date</label><input type="date" name="date" required></div>
+      <button type="submit" class="msub2">Book Test Ride</button>
+    </form>
+  </div>
+</div>
+
+<div id="toast">✅ Booked! We'll call within 2 hours.</div>
+
+<script>
+// ── THREE.JS is loaded via <script src> above — window.THREE is available ──
+var PI = Math.PI;
+var allModels = [];
+var showModels = [];
+var currentIdx = 0;
+var showObj = null;
+var autoRot = 0;
+var dragging = false;
+var prevX = 0;
+
+// ── LOADER ──
+function setLoad(p) {
+  var fill = document.getElementById('lfill');
+  if (fill) fill.style.width = p + '%';
+  if (p >= 100) {
+    setTimeout(function() {
+      var l = document.getElementById('loader');
+      if (l) { l.style.opacity = '0'; setTimeout(function(){ l.style.display='none'; }, 800); }
+    }, 400);
+  }
+}
+// Failsafe: hide loader after 5s no matter what
+setTimeout(function(){ setLoad(100); }, 5000);
+
+// ── MATERIALS ──
+function mat(color, rough, metal) {
+  return new THREE.MeshStandardMaterial({ color: color, roughness: rough||0.25, metalness: metal||0.7 });
+}
+function chrome() { return new THREE.MeshStandardMaterial({ color: 0xC8C8D0, roughness: 0.08, metalness: 1.0 }); }
+function rubber() { return new THREE.MeshStandardMaterial({ color: 0x0d0d0d, roughness: 0.9, metalness: 0 }); }
+function dark()   { return new THREE.MeshStandardMaterial({ color: 0x111118, roughness: 0.6, metalness: 0.3 }); }
+
+// ── TUBE HELPER ──
+function tube(parent, from, to, r, m) {
+  var dir = new THREE.Vector3().subVectors(to, from);
+  var len = dir.length();
+  var mid = new THREE.Vector3().addVectors(from, to).multiplyScalar(0.5);
+  var mesh = new THREE.Mesh(new THREE.CylinderGeometry(r||0.04, r||0.04, len, 8), m||chrome());
+  mesh.position.copy(mid);
+  mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0), dir.clone().normalize());
+  parent.add(mesh);
+  return mesh;
+}
+
+// ── BUILD BIKE ──
+function buildBike(colorHex) {
+  var g = new THREE.Group();
+  var bm = mat(colorHex, 0.2, 0.75);
+  var ch = chrome(), rb = rubber(), dk = dark();
+
+  function wheel(x) {
+    var wg = new THREE.Group();
+    wg.add(new THREE.Mesh(new THREE.TorusGeometry(0.75, 0.18, 14, 38), rb));
+    wg.add(new THREE.Mesh(new THREE.TorusGeometry(0.63, 0.035, 8, 30), ch));
+    var hub = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.14, 14), ch);
+    hub.rotation.x = PI/2;
+    wg.add(hub);
+    for (var i = 0; i < 6; i++) {
+      var sp = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.62, 4), ch);
+      sp.rotation.z = (i/6)*PI*2;
+      wg.add(sp);
+    }
+    wg.rotation.x = PI/2;
+    wg.position.set(x, -0.7, 0);
+    return wg;
+  }
+  g.add(wheel(-1.6));
+  g.add(wheel(1.6));
+
+  tube(g, new THREE.Vector3(-1.6,-0.7,0), new THREE.Vector3(-0.5,0.3,0), 0.048, ch);
+  tube(g, new THREE.Vector3(-0.5,0.3,0), new THREE.Vector3(0.3,0.72,0), 0.055, ch);
+  tube(g, new THREE.Vector3(0.3,0.72,0), new THREE.Vector3(1.0,0.52,0), 0.048, ch);
+  tube(g, new THREE.Vector3(1.0,0.52,0), new THREE.Vector3(1.6,-0.7,0), 0.042, ch);
+  tube(g, new THREE.Vector3(-0.5,0.3,0), new THREE.Vector3(0.5,-0.3,0), 0.038, ch);
+  tube(g, new THREE.Vector3(0.5,-0.3,0), new THREE.Vector3(1.0,0.52,0), 0.038, ch);
+  tube(g, new THREE.Vector3(-0.5,-0.1,0), new THREE.Vector3(-1.6,-0.7,0), 0.036, dk);
+
+  var tank = new THREE.Mesh(new THREE.BoxGeometry(0.9,0.3,0.44), bm);
+  tank.position.set(0.05, 0.84, 0);
+  g.add(tank);
+
+  var fair = new THREE.Mesh(new THREE.BoxGeometry(0.52,0.16,0.38), bm);
+  fair.position.set(0.62, 0.76, 0);
+  g.add(fair);
+
+  var seat = new THREE.Mesh(new THREE.BoxGeometry(0.82,0.1,0.3), new THREE.MeshStandardMaterial({color:0x1a1a1a,roughness:0.85}));
+  seat.position.set(-0.24, 0.79, 0);
+  g.add(seat);
+
+  var eng = new THREE.Mesh(new THREE.BoxGeometry(0.5,0.44,0.38), dk);
+  eng.position.set(0.1, 0.02, 0);
+  g.add(eng);
+
+  var exm = new THREE.MeshStandardMaterial({color:0x888898, roughness:0.18, metalness:0.92});
+  var ex = new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.07,1.2,8), exm);
+  ex.rotation.z = -0.3;
+  ex.position.set(-0.5, -0.25, 0.15);
+  g.add(ex);
+
+  tube(g, new THREE.Vector3(1.0,0.52,0.12), new THREE.Vector3(1.6,-0.7,0.12), 0.038, ch);
+  tube(g, new THREE.Vector3(1.0,0.52,-0.12), new THREE.Vector3(1.6,-0.7,-0.12), 0.038, ch);
+  tube(g, new THREE.Vector3(1.0,0.52,0), new THREE.Vector3(0.9,0.96,0), 0.028, ch);
+  tube(g, new THREE.Vector3(0.9,0.96,-0.34), new THREE.Vector3(0.9,0.96,0.34), 0.022, ch);
+
+  var glm = new THREE.MeshStandardMaterial({color:0xffcc44,roughness:0.05,metalness:0,transparent:true,opacity:0.9,emissive:new THREE.Color(0xffaa00),emissiveIntensity:0.3});
+  var hl = new THREE.Mesh(new THREE.SphereGeometry(0.15,12,12,0,PI), glm);
+  hl.position.set(1.55, 0.1, 0);
+  hl.rotation.y = PI/2;
+  g.add(hl);
+
+  var tlm = new THREE.MeshStandardMaterial({color:0xff0000,emissive:new THREE.Color(0xff0000),emissiveIntensity:0.5,transparent:true,opacity:0.85});
+  var tl = new THREE.Mesh(new THREE.BoxGeometry(0.08,0.06,0.2), tlm);
+  tl.position.set(-1.5, 0.3, 0);
+  g.add(tl);
+
+  var shd = new THREE.Mesh(new THREE.PlaneGeometry(4,1), new THREE.MeshBasicMaterial({color:0,transparent:true,opacity:0.3}));
+  shd.rotation.x = -PI/2;
+  shd.position.set(0, -1.79, 0);
+  g.add(shd);
+
+  return g;
+}
+
+// ── BUILD SCOOTER ──
+function buildScooter(colorHex) {
+  var g = new THREE.Group();
+  var bm = mat(colorHex, 0.22, 0.6);
+  var ch = chrome(), rb = rubber(), dk = dark();
+
+  function sWheel(x) {
+    var wg = new THREE.Group();
+    wg.add(new THREE.Mesh(new THREE.TorusGeometry(0.55,0.16,12,34), rb));
+    wg.add(new THREE.Mesh(new THREE.TorusGeometry(0.46,0.028,8,28), ch));
+    var hub = new THREE.Mesh(new THREE.CylinderGeometry(0.08,0.08,0.11,12), ch);
+    hub.rotation.x = PI/2;
+    wg.add(hub);
+    for (var i = 0; i < 5; i++) {
+      var sp = new THREE.Mesh(new THREE.CylinderGeometry(0.01,0.01,0.45,4), ch);
+      sp.rotation.z = (i/5)*PI*2;
+      wg.add(sp);
+    }
+    wg.rotation.x = PI/2;
+    wg.position.set(x, -0.6, 0);
+    return wg;
+  }
+  g.add(sWheel(-1.1));
+  g.add(sWheel(1.1));
+
+  var lb = new THREE.Mesh(new THREE.BoxGeometry(1.8,0.4,0.44), bm);
+  lb.position.set(0, -0.08, 0);
+  g.add(lb);
+
+  var ub = new THREE.Mesh(new THREE.BoxGeometry(0.6,0.65,0.4), bm);
+  ub.position.set(0.65, 0.35, 0);
+  g.add(ub);
+
+  var seat = new THREE.Mesh(new THREE.BoxGeometry(0.85,0.1,0.34), new THREE.MeshStandardMaterial({color:0x1a1a1a,roughness:0.85}));
+  seat.position.set(-0.18, 0.32, 0);
+  g.add(seat);
+
+  var hlm = new THREE.MeshStandardMaterial({color:0xffcc44,emissive:new THREE.Color(0xffaa00),emissiveIntensity:0.4,transparent:true,opacity:0.9});
+  var hl = new THREE.Mesh(new THREE.BoxGeometry(0.08,0.18,0.32), hlm);
+  hl.position.set(0.96, 0.42, 0);
+  g.add(hl);
+
+  tube(g, new THREE.Vector3(0.75,0.82,0), new THREE.Vector3(0.75,0.65,0), 0.022, ch);
+  tube(g, new THREE.Vector3(0.75,0.82,-0.28), new THREE.Vector3(0.75,0.82,0.28), 0.02, ch);
+  tube(g, new THREE.Vector3(0.78,0.6,0.09), new THREE.Vector3(1.1,-0.6,0.09), 0.028, ch);
+  tube(g, new THREE.Vector3(0.78,0.6,-0.09), new THREE.Vector3(1.1,-0.6,-0.09), 0.028, ch);
+
+  var shd = new THREE.Mesh(new THREE.PlaneGeometry(3,0.8), new THREE.MeshBasicMaterial({color:0,transparent:true,opacity:0.28}));
+  shd.rotation.x = -PI/2;
+  shd.position.set(0, -1.79, 0);
+  g.add(shd);
+  return g;
+}
+
+function build3D(m) {
+  var hex = parseInt(m.color.replace('#',''), 16);
+  return m.type === 'scooter' ? buildScooter(hex) : buildBike(hex);
+}
+
+// ── HERO SCENE ──
+var heroRenderer, heroScene, heroCamera, heroBike3d, heroParticles, heroLines, heroRL;
+(function initHero() {
+  var canvas = document.getElementById('hc');
+  heroRenderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true});
+  heroRenderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  heroRenderer.setClearColor(0x05050A, 1);
+  heroScene = new THREE.Scene();
+  heroScene.fog = new THREE.FogExp2(0x05050A, 0.016);
+  heroCamera = new THREE.PerspectiveCamera(60, 1, 0.1, 200);
+  heroCamera.position.set(0, 2.5, 10);
+
+  heroScene.add(new THREE.AmbientLight(0xffffff, 0.12));
+  var ml = new THREE.DirectionalLight(0xffffff, 1.1);
+  ml.position.set(5,8,6); heroScene.add(ml);
+  heroRL = new THREE.PointLight(0xE8001D, 4, 20);
+  heroRL.position.set(-3,1,3); heroScene.add(heroRL);
+  heroScene.add(new THREE.GridHelper(50,50,0x1a0000,0x110011));
+
+  heroBike3d = buildBike(0xE8001D);
+  heroBike3d.position.set(1.5, 0.5, 0);
+  heroBike3d.rotation.y = -0.4;
+  heroScene.add(heroBike3d);
+
+  var pGeo = new THREE.BufferGeometry();
+  var pArr = new Float32Array(300*3);
+  for (var i=0;i<300;i++){pArr[i*3]=(Math.random()-0.5)*40;pArr[i*3+1]=Math.random()*20-2;pArr[i*3+2]=(Math.random()-0.5)*30;}
+  pGeo.setAttribute('position', new THREE.BufferAttribute(pArr,3));
+  heroParticles = new THREE.Points(pGeo, new THREE.PointsMaterial({color:0xE8001D,size:0.04,transparent:true,opacity:0.45}));
+  heroScene.add(heroParticles);
+
+  heroLines = new THREE.Group();
+  for (var j=0;j<16;j++){
+    var lG=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0),new THREE.Vector3(6,0,0)]);
+    var l=new THREE.Line(lG,new THREE.LineBasicMaterial({color:0xE8001D,transparent:true,opacity:Math.random()*0.2}));
+    l.position.set(-8,(Math.random()-0.5)*6,(Math.random()-0.5)*3);
+    heroLines.add(l);
+  }
+  heroScene.add(heroLines);
+
+  function resizeHero(){var w=canvas.clientWidth,h=canvas.clientHeight;heroRenderer.setSize(w,h,false);heroCamera.aspect=w/h;heroCamera.updateProjectionMatrix();}
+  window.addEventListener('resize',resizeHero);
+  resizeHero();
+})();
+
+var mx=0, my=0;
+window.addEventListener('mousemove',function(e){mx=(e.clientX/innerWidth-0.5)*2;my=(e.clientY/innerHeight-0.5)*2;});
+
+// ── SHOWROOM SCENE ──
+var showRenderer, showScene, showCamera, showRing, showParts;
+(function initShowroom() {
+  var canvas = document.getElementById('sc');
+  showRenderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true});
+  showRenderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  showRenderer.setClearColor(0x0D0D15,1);
+  showScene = new THREE.Scene();
+  showScene.fog = new THREE.Fog(0x0D0D15,12,30);
+  showCamera = new THREE.PerspectiveCamera(55,1,0.1,100);
+  showCamera.position.set(0,1.5,5.5);
+  showCamera.lookAt(0,0,0);
+
+  showScene.add(new THREE.AmbientLight(0xffffff,0.28));
+  var sp1=new THREE.SpotLight(0xffffff,3,15,PI/6,0.3); sp1.position.set(0,6,3); showScene.add(sp1);
+  var sp2=new THREE.SpotLight(0xE8001D,2,10,PI/5,0.5); sp2.position.set(-3,5,0); showScene.add(sp2);
+
+  var floor=new THREE.Mesh(new THREE.PlaneGeometry(20,20),new THREE.MeshStandardMaterial({color:0x0a0a12,roughness:0.1,metalness:0.6}));
+  floor.rotation.x=-PI/2; floor.position.set(0,-1.8,0); showScene.add(floor);
+
+  var plat=new THREE.Mesh(new THREE.CylinderGeometry(2.5,2.5,0.1,48),new THREE.MeshStandardMaterial({color:0x151520,roughness:0.3,metalness:0.7}));
+  plat.position.set(0,-1.79,0); showScene.add(plat);
+
+  showRing=new THREE.Mesh(new THREE.TorusGeometry(2.4,0.03,8,60),new THREE.MeshBasicMaterial({color:0xE8001D,transparent:true,opacity:0.6}));
+  showRing.rotation.x=PI/2; showRing.position.set(0,-1.73,0); showScene.add(showRing);
+
+  var spGeo=new THREE.BufferGeometry();
+  var spArr=new Float32Array(100*3);
+  for(var i=0;i<100;i++){var a=Math.random()*PI*2,r=1.5+Math.random()*4;spArr[i*3]=Math.cos(a)*r;spArr[i*3+1]=Math.random()*5-1.5;spArr[i*3+2]=Math.sin(a)*r;}
+  spGeo.setAttribute('position',new THREE.BufferAttribute(spArr,3));
+  showParts=new THREE.Points(spGeo,new THREE.PointsMaterial({color:0xE8001D,size:0.03,transparent:true,opacity:0.35}));
+  showScene.add(showParts);
+
+  function resizeShow(){var c=document.getElementById('sc'),w=c.clientWidth,h=c.clientHeight;showRenderer.setSize(w,h,false);showCamera.aspect=w/h;showCamera.updateProjectionMatrix();}
+  window.addEventListener('resize',resizeShow);
+  resizeShow();
+
+  var scw=document.getElementById('scw');
+  scw.addEventListener('mousedown',function(e){dragging=true;prevX=e.clientX;});
+  window.addEventListener('mouseup',function(){dragging=false;});
+  window.addEventListener('mousemove',function(e){if(!dragging)return;autoRot+=(e.clientX-prevX)*0.007;prevX=e.clientX;});
+  scw.addEventListener('touchstart',function(e){dragging=true;prevX=e.touches[0].clientX;},{passive:true});
+  window.addEventListener('touchend',function(){dragging=false;});
+  window.addEventListener('touchmove',function(e){if(!dragging)return;autoRot+=(e.touches[0].clientX-prevX)*0.007;prevX=e.touches[0].clientX;},{passive:true});
+  scw.addEventListener('wheel',function(e){showCamera.position.z=Math.max(2.5,Math.min(9,showCamera.position.z+e.deltaY*0.005));},{passive:true});
+})();
+
+// ── WHY SCENE ──
+var whyRenderer, whyScene, whyCamera, whyRings=[], whyOrbs=[], whyLight;
+(function initWhy() {
+  var canvas = document.getElementById('wc');
+  whyRenderer = new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});
+  whyRenderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  whyRenderer.setClearColor(0,0);
+  whyScene = new THREE.Scene();
+  whyCamera = new THREE.PerspectiveCamera(60,1,0.1,100);
+  whyCamera.position.z = 8;
+
+  whyScene.add(new THREE.AmbientLight(0xffffff,0.3));
+  whyLight = new THREE.PointLight(0xE8001D,4,15); whyScene.add(whyLight);
+  var wl2=new THREE.PointLight(0x4444ff,2,12); wl2.position.set(3,2,2); whyScene.add(wl2);
+
+  for(var i=0;i<8;i++){
+    var rm=new THREE.MeshStandardMaterial({color:i%2===0?0xE8001D:0x333366,roughness:0.3,metalness:0.6,transparent:true,opacity:0.55});
+    var r=new THREE.Mesh(new THREE.TorusGeometry(1.2+i*0.15,0.02,8,40),rm);
+    r.rotation.x=PI/2+i*0.2; r.rotation.z=i*0.3; r.position.set(0,(i-3.5)*0.3,0);
+    whyScene.add(r); whyRings.push(r);
+  }
+
+  var hm=new THREE.MeshStandardMaterial({color:0xE8001D,roughness:0.2,metalness:0.8,emissive:new THREE.Color(0xE8001D),emissiveIntensity:0.2});
+  var hL=new THREE.Mesh(new THREE.BoxGeometry(0.28,1.5,0.15),hm); hL.position.set(-0.5,0,0); whyScene.add(hL);
+  var hR=new THREE.Mesh(new THREE.BoxGeometry(0.28,1.5,0.15),hm); hR.position.set(0.5,0,0); whyScene.add(hR);
+  var hM=new THREE.Mesh(new THREE.BoxGeometry(1.28,0.24,0.15),hm); whyScene.add(hM);
+
+  for(var j=0;j<6;j++){
+    var s=new THREE.Mesh(new THREE.SphereGeometry(0.08,10,10),new THREE.MeshStandardMaterial({color:0xffffff,roughness:0.1,metalness:0.9,emissive:new THREE.Color(0xE8001D),emissiveIntensity:0.3}));
+    whyScene.add(s);
+    whyOrbs.push({mesh:s,angle:(j/6)*PI*2,radius:2.5+(j%2)*0.5,speed:0.4+j*0.1,yOff:(j-2.5)*0.4});
+  }
+
+  function resizeWhy(){var c=document.getElementById('wc'),p=c.parentElement,w=p.clientWidth,h=p.clientHeight||400;whyRenderer.setSize(w,h,false);whyCamera.aspect=w/h;whyCamera.updateProjectionMatrix();}
+  window.addEventListener('resize',resizeWhy);
+  resizeWhy();
+})();
+
+// ── MARQUEE ──
+var mqItems=['Two-Wheeler Sales','Bike Service','Spare Parts','EMI Available','Vehicle Exchange','Insurance Help','Hero MotoCorp Dealer','Soro · Balasore · Odisha'];
+var track=document.getElementById('mtrack');
+mqItems.concat(mqItems).forEach(function(t){var d=document.createElement('div');d.className='mi';d.textContent=t;track.appendChild(d);});
+
+// ── LOAD MODELS ──
+function loadModels() {
+  fetch('/api/models')
+    .then(function(r){return r.json();})
+    .then(function(data){
+      allModels = data;
+      showModels = data;
+      populateSelects(data);
+      renderGrid(data);
+      if(data.length>0) buildShowModel(0);
+      setLoad(100);
+    })
+    .catch(function(){
+      setLoad(100);
+    });
+}
+
+function populateSelects(models) {
+  ['bsel','msel2'].forEach(function(id){
+    var s=document.getElementById(id);
+    if(!s)return;
+    s.innerHTML='<option value="">Select a model</option>';
+    models.forEach(function(m){var o=document.createElement('option');o.value=m.name;o.textContent=m.name;s.appendChild(o);});
+  });
+}
+
+// ── SHOWROOM 3D ──
+function buildShowModel(idx) {
+  if(!showModels[idx])return;
+  if(showObj){showScene.remove(showObj);showObj=null;}
+  var m=showModels[idx];
+  showObj=build3D(m);
+  showObj.position.set(0,0.5,0);
+  showScene.add(showObj);
+  currentIdx=idx;
+  document.getElementById('mn').textContent=m.name;
+  document.getElementById('mb').textContent=m.type==='scooter'?'Scooter':'Motorcycle';
+  document.getElementById('ms').innerHTML='<div><div class="sv">'+m.engine+'</div><div class="sk">Engine</div></div><div><div class="sv">'+m.mileage+'</div><div class="sk">Mileage</div></div><div><div class="sv">'+m.weight+'</div><div class="sk">Weight</div></div>';
+  document.getElementById('mp').innerHTML=m.price+'<sub>onwards</sub>';
+  document.getElementById('mct').onclick=function(){openModal(m.name);};
+}
+
+window.filterShow=function(type,btn){
+  document.querySelectorAll('#stabs .tab').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  showModels=type==='all'?allModels:allModels.filter(function(m){return m.type===type;});
+  if(showModels.length>0){currentIdx=0;buildShowModel(0);}
+};
+
+// ── MODEL GRID ──
+function bikeSVG(c){return'<svg viewBox="0 0 300 155" xmlns="http://www.w3.org/2000/svg" fill="none"><circle cx="65" cy="115" r="34" stroke="'+c+'" stroke-width="2.5"/><circle cx="65" cy="115" r="22" stroke="#444" stroke-width="1" opacity="0.5"/><circle cx="65" cy="115" r="7" fill="'+c+'"/><circle cx="235" cy="115" r="34" stroke="'+c+'" stroke-width="2.5"/><circle cx="235" cy="115" r="22" stroke="#444" stroke-width="1" opacity="0.5"/><circle cx="235" cy="115" r="7" fill="'+c+'"/><polyline points="65,115 110,78 155,60 195,58 220,70 235,115" stroke="#C0C0C8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M120,68 Q145,52 175,50 Q198,48 212,62" fill="'+c+'" opacity="0.85"/><rect x="106" y="80" width="72" height="36" rx="4" fill="#1a1a24" stroke="#333" stroke-width="1"/><line x1="215" y1="70" x2="235" y2="115" stroke="#C0C0C8" stroke-width="3" stroke-linecap="round"/><line x1="207" y1="65" x2="180" y2="48" stroke="#C0C0C8" stroke-width="3" stroke-linecap="round"/></svg>';}
+function scootSVG(c){return'<svg viewBox="0 0 300 155" xmlns="http://www.w3.org/2000/svg" fill="none"><circle cx="70" cy="115" r="30" stroke="'+c+'" stroke-width="2.5"/><circle cx="70" cy="115" r="19" stroke="#444" stroke-width="1" opacity="0.5"/><circle cx="70" cy="115" r="6" fill="'+c+'"/><circle cx="230" cy="115" r="30" stroke="'+c+'" stroke-width="2.5"/><circle cx="230" cy="115" r="19" stroke="#444" stroke-width="1" opacity="0.5"/><circle cx="230" cy="115" r="6" fill="'+c+'"/><path d="M70,115 Q95,78 148,68 Q188,60 218,78 Q235,90 230,115" stroke="#C0C0C8" stroke-width="3.5" stroke-linecap="round"/><path d="M105,88 Q132,58 168,54 Q198,50 212,70" fill="'+c+'" opacity="0.8"/><rect x="118" y="63" width="78" height="38" rx="7" fill="#1a1a24" stroke="#333" stroke-width="1"/></svg>';}
+
+function renderGrid(models) {
+  var g=document.getElementById('mgrid');
+  if(!models.length){g.innerHTML='<div style="color:var(--dim);font-size:0.8rem;padding:2rem 0">No models found.</div>';return;}
+  g.innerHTML=models.map(function(m){
+    return '<div class="mc" onclick="openModal(\''+m.name+'\')">'+(m.badge?'<div class="mc-badge">'+m.badge+'</div>':'')+
+      '<div class="mc-vis">'+(m.type==='scooter'?scootSVG(m.color):bikeSVG(m.color))+'</div>'+
+      '<div class="mc-name">'+m.name+'</div><div class="mc-type">'+(m.type==='scooter'?'Scooter':'Motorcycle')+'</div>'+
+      '<div class="mc-sp"><div><div class="sv" style="font-size:1rem">'+m.engine+'</div><div class="sk">Engine</div></div><div><div class="sv" style="font-size:1rem">'+m.mileage+'</div><div class="sk">Mileage</div></div></div>'+
+      '<div class="mc-pr"><div class="mc-prn">'+m.price+'</div><div class="mc-prl">onwards</div></div>'+
+      '<button class="mc-btn" onclick="event.stopPropagation();openModal(\''+m.name+'\')">Book Test Ride</button></div>';
+  }).join('');
+}
+
+window.filterGrid=function(type,btn){
+  document.querySelectorAll('#gtabs .tab').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  renderGrid(type==='all'?allModels:allModels.filter(function(m){return m.type===type;}));
+};
+
+// ── MODAL ──
+window.openModal=function(name){
+  document.getElementById('mn2').textContent=name;
+  var s=document.getElementById('msel2');
+  for(var i=0;i<s.options.length;i++){if(s.options[i].text===name){s.selectedIndex=i;break;}}
+  document.getElementById('mov').classList.add('open');
+  document.body.style.overflow='hidden';
+};
+window.closeMod=function(){document.getElementById('mov').classList.remove('open');document.body.style.overflow='';};
+
+function showToast(){var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show');},4000);}
+
+window.handleBook=function(e){
+  e.preventDefault();
+  var fd=new FormData(e.target);
+  fetch('/api/appointments',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:fd.get('name'),phone:fd.get('phone'),model:fd.get('model'),date:fd.get('date'),message:fd.get('message')||''})})
+  .finally(function(){showToast();e.target.reset();});
+};
+window.handleMod=function(e){
+  e.preventDefault();
+  var fd=new FormData(e.target);
+  fetch('/api/appointments',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:fd.get('name'),phone:fd.get('phone'),model:fd.get('model')||document.getElementById('mn2').textContent,date:fd.get('date'),message:''})})
+  .finally(function(){closeMod();showToast();e.target.reset();});
+};
+
+var today=new Date().toISOString().split('T')[0];
+document.querySelectorAll('input[type="date"]').forEach(function(d){d.min=today;});
+
+// ── MAIN LOOP ──
+var ht=0, st=0, wt=0;
+function animate(){
+  requestAnimationFrame(animate);
+  ht+=0.012; st+=0.01; wt+=0.012;
+
+  // Hero
+  if(heroBike3d){heroBike3d.rotation.y=-0.4+mx*0.14;heroBike3d.position.y=0.5+Math.sin(ht)*0.08;}
+  if(heroRL){heroRL.position.x=Math.sin(ht)*4;heroRL.position.z=Math.cos(ht*0.7)*3;heroRL.intensity=3+Math.sin(ht*2);}
+  if(heroParticles)heroParticles.rotation.y+=0.0004;
+  if(heroLines)heroLines.children.forEach(function(l){l.position.x+=0.08;if(l.position.x>6)l.position.x=-10;});
+  heroCamera.position.x=mx*0.5;heroCamera.position.y=2.5-my*0.3;heroCamera.lookAt(1.5,0.5,0);
+  heroRenderer.render(heroScene,heroCamera);
+
+  // Showroom
+  if(!dragging)autoRot+=0.004;
+  if(showObj)showObj.rotation.y=autoRot;
+  if(showRing)showRing.material.opacity=0.35+Math.sin(st*2)*0.2;
+  if(showParts)showParts.rotation.y+=0.002;
+  showRenderer.render(showScene,showCamera);
+
+  // Why
+  if(whyLight){whyLight.position.x=Math.sin(wt)*3;whyLight.position.y=Math.cos(wt*0.7)*2;}
+  whyRings.forEach(function(r,i){r.rotation.x+=0.003+i*0.001;r.rotation.y+=0.002;r.material.opacity=0.28+Math.sin(wt+i)*0.22;});
+  whyOrbs.forEach(function(o){o.angle+=0.01*o.speed;o.mesh.position.x=Math.cos(o.angle)*o.radius;o.mesh.position.y=o.yOff+Math.sin(o.angle*0.5)*0.3;o.mesh.position.z=Math.sin(o.angle)*o.radius;});
+  whyRenderer.render(whyScene,whyCamera);
+}
+
+setLoad(50);
+loadModels();
+animate();
+</script>
+</body>
+</html>

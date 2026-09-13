@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Twinkle Showroom</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--red:#E8001D;--black:#05050A;--dark:#0D0D15;--silver:#C0C0C8;--white:#F0F0F0;--dim:#555566;--green:#16a34a;--yellow:#ca8a04;}
+body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;min-height:100vh;}
+
+/* LOGIN */
+#loginWrap{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:2rem;}
+.login-box{background:var(--dark);border:1px solid rgba(255,255,255,0.07);padding:3rem;width:100%;max-width:380px;}
+.login-logo{font-family:'Bebas Neue';font-size:2rem;letter-spacing:0.1em;margin-bottom:0.3rem;}
+.login-sub{font-size:0.68rem;color:var(--dim);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:2rem;}
+.lf{display:flex;flex-direction:column;gap:0.8rem;}
+.lf label{font-size:0.62rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver);margin-bottom:0.2rem;display:block;}
+.lf input{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:var(--white);padding:0.7rem 0.9rem;font-family:'Inter';font-size:0.85rem;outline:none;transition:border-color 0.2s;width:100%;}
+.lf input:focus{border-color:var(--red);}
+.lbtn{background:var(--red);color:white;border:none;padding:0.85rem;font-family:'Inter';font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;width:100%;margin-top:0.5rem;transition:background 0.2s;}
+.lbtn:hover{background:#c0001a;}
+.lerr{color:#f87171;font-size:0.75rem;display:none;}
+.lerr.show{display:block;}
+
+/* APP */
+#app{display:none;min-height:100vh;}
+.admin-nav{background:var(--dark);border-bottom:1px solid rgba(255,255,255,0.06);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;}
+.an-logo{font-family:'Bebas Neue';font-size:1.3rem;letter-spacing:0.1em;display:flex;align-items:center;gap:0.8rem;}
+.an-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.an-user{font-size:0.72rem;color:var(--dim);}
+.logout-btn{background:transparent;color:var(--dim);border:1px solid rgba(85,85,102,0.3);padding:0.4rem 0.9rem;font-size:0.7rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;font-family:'Inter';transition:all 0.2s;}
+.logout-btn:hover{color:white;border-color:white;}
+
+.admin-layout{display:flex;min-height:calc(100vh - 57px);}
+.sidebar{width:220px;background:var(--dark);border-right:1px solid rgba(255,255,255,0.05);padding:1.5rem 0;flex-shrink:0;}
+.sb-item{display:flex;align-items:center;gap:0.7rem;padding:0.7rem 1.5rem;font-size:0.78rem;font-weight:500;color:var(--dim);cursor:pointer;transition:all 0.2s;border-left:2px solid transparent;}
+.sb-item:hover{color:var(--white);background:rgba(255,255,255,0.03);}
+.sb-item.active{color:var(--white);border-left-color:var(--red);background:rgba(232,0,29,0.06);}
+.sb-icon{font-size:1rem;width:20px;text-align:center;}
+
+.main{flex:1;padding:2rem;overflow-y:auto;}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;margin-bottom:2rem;}
+.stat-card{background:var(--dark);border:1px solid rgba(255,255,255,0.05);padding:1.2rem 1.4rem;}
+.sc-num{font-family:'Bebas Neue';font-size:2.2rem;color:var(--white);line-height:1;}
+.sc-label{font-size:0.62rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.2rem;}
+.sc-red{border-left:2px solid var(--red);}
+.sc-green{border-left:2px solid var(--green);}
+.sc-yellow{border-left:2px solid var(--yellow);}
+
+/* SECTIONS */
+.panel{display:none;}
+.panel.active{display:block;}
+.panel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;}
+.panel-title{font-family:'Bebas Neue';font-size:1.8rem;letter-spacing:0.05em;}
+.add-btn{background:var(--red);color:white;border:none;padding:0.55rem 1.3rem;font-size:0.75rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;font-family:'Inter';transition:opacity 0.2s;display:flex;align-items:center;gap:0.4rem;}
+.add-btn:hover{opacity:0.85;}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:0.8rem;}
+th{text-align:left;padding:0.6rem 0.8rem;font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);border-bottom:1px solid rgba(255,255,255,0.06);white-space:nowrap;}
+td{padding:0.75rem 0.8rem;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--silver);vertical-align:middle;}
+tr:hover td{background:rgba(255,255,255,0.02);}
+.badge{display:inline-block;padding:0.15rem 0.5rem;font-size:0.58rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;}
+.badge-red{background:rgba(232,0,29,0.15);color:#f87171;}
+.badge-green{background:rgba(22,163,74,0.15);color:#4ade80;}
+.badge-yellow{background:rgba(202,138,4,0.15);color:#fbbf24;}
+.badge-gray{background:rgba(255,255,255,0.06);color:var(--dim);}
+.tbl-actions{display:flex;gap:0.4rem;}
+.tbl-btn{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--dim);padding:0.3rem 0.6rem;font-size:0.65rem;cursor:pointer;font-family:'Inter';transition:all 0.2s;}
+.tbl-btn:hover{border-color:var(--red);color:var(--red);}
+.tbl-btn.del:hover{border-color:#f87171;color:#f87171;}
+.color-dot{width:14px;height:14px;border-radius:50%;display:inline-block;vertical-align:middle;border:1px solid rgba(255,255,255,0.15);}
+
+/* MODAL */
+.m-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:500;align-items:center;justify-content:center;backdrop-filter:blur(6px);}
+.m-ov.open{display:flex;}
+.m-box{background:var(--dark);border:1px solid rgba(255,255,255,0.08);padding:2rem;width:90%;max-width:560px;position:relative;max-height:90vh;overflow-y:auto;}
+.m-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--dim);font-size:1.1rem;cursor:pointer;transition:color 0.2s;padding:0.3rem 0.5rem;}
+.m-close:hover{color:var(--white);}
+.m-title{font-family:'Bebas Neue';font-size:1.7rem;letter-spacing:0.05em;margin-bottom:1.5rem;}
+.mf{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;}
+.mfg{display:flex;flex-direction:column;gap:0.3rem;}
+.mfg.full{grid-column:1/-1;}
+.mfg label{font-size:0.6rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver);}
+.mfg input,.mfg select,.mfg textarea{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:var(--white);padding:0.65rem 0.8rem;font-family:'Inter';font-size:0.82rem;outline:none;transition:border-color 0.2s;width:100%;-webkit-appearance:none;}
+.mfg input:focus,.mfg select:focus,.mfg textarea:focus{border-color:var(--red);}
+.mfg select option{background:var(--dark);}
+.mfg textarea{resize:vertical;min-height:70px;}
+.check-row{display:flex;align-items:center;gap:0.6rem;font-size:0.8rem;color:var(--silver);}
+.check-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--red);}
+.m-actions{display:flex;gap:0.6rem;margin-top:1rem;grid-column:1/-1;}
+.m-save{background:var(--red);color:white;border:none;padding:0.75rem 1.8rem;font-family:'Inter';font-size:0.78rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.m-save:hover{background:#c0001a;}
+.m-cancel{background:transparent;color:var(--dim);border:1px solid rgba(85,85,102,0.3);padding:0.75rem 1.2rem;font-family:'Inter';font-size:0.78rem;cursor:pointer;transition:all 0.2s;}
+.m-cancel:hover{color:var(--white);border-color:var(--white);}
+
+/* TOAST */
+#toast{position:fixed;bottom:2rem;right:2rem;padding:0.85rem 1.3rem;font-size:0.78rem;font-weight:500;z-index:9999;display:none;align-items:center;gap:0.5rem;}
+#toast.show{display:flex;animation:su 0.3s ease;}
+#toast.success{background:var(--green);}
+#toast.error{background:#dc2626;}
+@keyframes su{from{transform:translateY(12px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+.empty{color:var(--dim);font-size:0.82rem;padding:2rem 0;text-align:center;}
+.status-sel{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:var(--white);padding:0.3rem 0.5rem;font-family:'Inter';font-size:0.72rem;outline:none;cursor:pointer;}
+.status-sel:focus{border-color:var(--red);}
+
+@media(max-width:700px){
+  .admin-layout{flex-direction:column;}
+  .sidebar{width:100%;display:flex;flex-wrap:wrap;padding:0.5rem;}
+  .sb-item{border-left:none;border-bottom:2px solid transparent;padding:0.5rem 0.8rem;}
+  .sb-item.active{border-bottom-color:var(--red);border-left:none;}
+  .main{padding:1rem;}
+  .mf{grid-template-columns:1fr;}
+  .mfg.full,.m-actions{grid-column:1;}
+  .stats-row{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginWrap">
+  <div class="login-box">
+    <div class="login-logo">TWINKLE ADMIN</div>
+    <div class="login-sub">Hero MotoCorp · Soro, Balasore</div>
+    <form class="lf" onsubmit="doLogin(event)">
+      <div>
+        <label>Username</label>
+        <input type="text" id="lUser" placeholder="admin" required autocomplete="username">
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" id="lPass" placeholder="••••••••" required autocomplete="current-password">
+      </div>
+      <div class="lerr" id="lerr">Invalid credentials. Try again.</div>
+      <button type="submit" class="lbtn">Login to Dashboard</button>
+    </form>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+  <nav class="admin-nav">
+    <div class="an-logo">
+      <div class="an-dot"></div>
+      TWINKLE ADMIN
+    </div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div class="an-user" id="anUser"></div>
+      <button class="logout-btn" onclick="doLogout()">Logout</button>
+      <a href="/" target="_blank" style="color:var(--red);font-size:0.7rem;text-decoration:none;letter-spacing:0.07em;">View Site ↗</a>
+    </div>
+  </nav>
+  <div class="admin-layout">
+    <div class="sidebar">
+      <div class="sb-item active" onclick="showPanel('dashboard')"><span class="sb-icon">📊</span>Dashboard</div>
+      <div class="sb-item" onclick="showPanel('models')"><span class="sb-icon">🏍️</span>Models</div>
+      <div class="sb-item" onclick="showPanel('appointments')"><span class="sb-icon">📅</span>Appointments</div>
+      <div class="sb-item" onclick="showPanel('enquiries')"><span class="sb-icon">💬</span>Enquiries</div>
+    </div>
+    <div class="main">
+
+      <!-- DASHBOARD -->
+      <div class="panel active" id="panel-dashboard">
+        <div class="panel-header"><div class="panel-title">DASHBOARD</div></div>
+        <div class="stats-row" id="statsRow">
+          <div class="stat-card sc-red"><div class="sc-num" id="s-models">—</div><div class="sc-label">Total Models</div></div>
+          <div class="stat-card sc-green"><div class="sc-num" id="s-active">—</div><div class="sc-label">Active Models</div></div>
+          <div class="stat-card sc-yellow"><div class="sc-num" id="s-appts">—</div><div class="sc-label">Total Appointments</div></div>
+          <div class="stat-card sc-red"><div class="sc-num" id="s-pending">—</div><div class="sc-label">Pending</div></div>
+          <div class="stat-card sc-green"><div class="sc-num" id="s-today">—</div><div class="sc-label">Today's Rides</div></div>
+          <div class="stat-card sc-yellow"><div class="sc-num" id="s-enq">—</div><div class="sc-label">Enquiries</div></div>
+        </div>
+        <div style="color:var(--dim);font-size:0.78rem;line-height:1.8;margin-top:1rem;">
+          <strong style="color:var(--white);display:block;font-family:'Bebas Neue';font-size:1.2rem;letter-spacing:0.05em;margin-bottom:0.5rem;">QUICK ACTIONS</strong>
+          → <span style="color:var(--red);cursor:pointer;" onclick="showPanel('models')">Add a new model</span> · 
+          <span style="color:var(--red);cursor:pointer;" onclick="showPanel('appointments')">View appointments</span> · 
+          <span style="color:var(--red);cursor:pointer;" onclick="showPanel('enquiries')">Check enquiries</span>
+        </div>
+      </div>
+
+      <!-- MODELS -->
+      <div class="panel" id="panel-models">
+        <div class="panel-header">
+          <div class="panel-title">MANAGE MODELS</div>
+          <button class="add-btn" onclick="openModelModal()">+ Add New Model</button>
+        </div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Model</th><th>Type</th><th>Engine</th><th>Mileage</th><th>Price</th><th>Badge</th><th>Color</th><th>Featured</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="modelsTbl"><tr><td colspan="10" class="empty">Loading…</td></tr></tbody>
+        </table></div>
+      </div>
+
+      <!-- APPOINTMENTS -->
+      <div class="panel" id="panel-appointments">
+        <div class="panel-header"><div class="panel-title">APPOINTMENTS</div></div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Name</th><th>Phone</th><th>Model</th><th>Date</th><th>Message</th><th>Status</th><th>Booked On</th></tr></thead>
+          <tbody id="apptsTbl"><tr><td colspan="7" class="empty">Loading…</td></tr></tbody>
+        </table></div>
+      </div>
+
+      <!-- ENQUIRIES -->
+      <div class="panel" id="panel-enquiries">
+        <div class="panel-header"><div class="panel-title">ENQUIRIES</div></div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Name</th><th>Phone</th><th>Message</th><th>Received</th></tr></thead>
+          <tbody id="enqTbl"><tr><td colspan="4" class="empty">Loading…</td></tr></tbody>
+        </table></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- MODEL MODAL -->
+<div class="m-ov" id="modelModal" onclick="closeModelModal(event)">
+  <div class="m-box">
+    <button class="m-close" onclick="closeModelModalBtn()">✕</button>
+    <div class="m-title" id="modalTitle">ADD MODEL</div>
+    <form class="mf" onsubmit="saveModel(event)">
+      <input type="hidden" id="editId">
+      <div class="mfg"><label>Model Name *</label><input type="text" id="fName" placeholder="e.g. Splendor Plus" required></div>
+      <div class="mfg"><label>Type *</label>
+        <select id="fType"><option value="bike">Bike (Motorcycle)</option><option value="scooter">Scooter</option></select>
+      </div>
+      <div class="mfg"><label>Engine *</label><input type="text" id="fEngine" placeholder="e.g. 97.2cc" required></div>
+      <div class="mfg"><label>Mileage *</label><input type="text" id="fMileage" placeholder="e.g. 60 kmpl" required></div>
+      <div class="mfg"><label>Weight *</label><input type="text" id="fWeight" placeholder="e.g. 102 kg" required></div>
+      <div class="mfg"><label>Display Price *</label><input type="text" id="fPrice" placeholder="e.g. ₹74,900" required></div>
+      <div class="mfg"><label>Price (Number) *</label><input type="number" id="fPriceNum" placeholder="e.g. 74900" required></div>
+      <div class="mfg"><label>Badge</label><input type="text" id="fBadge" placeholder="e.g. Bestseller, New, Popular"></div>
+      <div class="mfg"><label>Color (hex)</label><input type="color" id="fColor" value="#E8001D" style="height:40px;padding:2px 4px;cursor:pointer;"></div>
+      <div class="mfg full"><label>Description</label><textarea id="fDesc" placeholder="Short description of this model…"></textarea></div>
+      <div class="mfg full" style="display:flex;gap:2rem;">
+        <label class="check-row"><input type="checkbox" id="fFeatured"> Featured (show prominently)</label>
+        <label class="check-row"><input type="checkbox" id="fAvailable" checked> Available for sale</label>
+      </div>
+      <div class="m-actions full">
+        <button type="submit" class="m-save">Save Model</button>
+        <button type="button" class="m-cancel" onclick="closeModelModalBtn()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+let token = localStorage.getItem('twinkle_token') || '';
+let currentUser = localStorage.getItem('twinkle_user') || '';
+
+function toast(msg, type='success') {
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.className='show '+(type==='success'?'success':'error');
+  setTimeout(()=>t.className='',3500);
+}
+
+async function api(path, method='GET', body=null) {
+  const opts={method,headers:{'Content-Type':'application/json','Authorization':'Bearer '+token}};
+  if(body) opts.body=JSON.stringify(body);
+  const res=await fetch('/api'+path, opts);
+  if(!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+async function doLogin(e) {
+  e.preventDefault();
+  const err=document.getElementById('lerr');
+  err.classList.remove('show');
+  try {
+    const data=await api('/admin/login','POST',{username:document.getElementById('lUser').value,password:document.getElementById('lPass').value});
+    token=data.token; currentUser=data.username;
+    localStorage.setItem('twinkle_token',token);
+    localStorage.setItem('twinkle_user',currentUser);
+    initApp();
+  } catch {
+    err.classList.add('show');
+  }
+}
+
+function doLogout() {
+  token=''; currentUser='';
+  localStorage.removeItem('twinkle_token');
+  localStorage.removeItem('twinkle_user');
+  document.getElementById('app').style.display='none';
+  document.getElementById('loginWrap').style.display='flex';
+}
+
+function initApp() {
+  document.getElementById('loginWrap').style.display='none';
+  document.getElementById('app').style.display='block';
+  document.getElementById('anUser').textContent=currentUser;
+  loadStats(); loadModels(); loadAppointments(); loadEnquiries();
+}
+
+function showPanel(id) {
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.sb-item').forEach(s=>s.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  document.querySelectorAll('.sb-item').forEach(s=>{ if(s.textContent.toLowerCase().includes(id==='dashboard'?'dash':id)) s.classList.add('active'); });
+}
+
+async function loadStats() {
+  try {
+    const s=await api('/admin/stats');
+    document.getElementById('s-models').textContent=s.total_models;
+    document.getElementById('s-active').textContent=s.active_models;
+    document.getElementById('s-appts').textContent=s.appointments_total;
+    document.getElementById('s-pending').textContent=s.appointments_pending;
+    document.getElementById('s-today').textContent=s.appointments_today;
+    document.getElementById('s-enq').textContent=s.enquiries;
+  } catch(e){console.error(e);}
+}
+
+async function loadModels() {
+  try {
+    const models=await api('/admin/models');
+    const tb=document.getElementById('modelsTbl');
+    if(!models.length){tb.innerHTML='<tr><td colspan="10" class="empty">No models yet. Add one!</td></tr>';return;}
+    tb.innerHTML=models.map(m=>`
+      <tr>
+        <td style="color:var(--white);font-weight:500;">${m.name}</td>
+        <td><span class="badge ${m.type==='bike'?'badge-red':'badge-yellow'}">${m.type}</span></td>
+        <td>${m.engine}</td>
+        <td>${m.mileage}</td>
+        <td style="color:var(--white);font-weight:600;">${m.price}</td>
+        <td>${m.badge?`<span class="badge badge-gray">${m.badge}</span>`:'-'}</td>
+        <td><span class="color-dot" style="background:${m.color}"></span> ${m.color}</td>
+        <td>${m.featured?'<span class="badge badge-green">Yes</span>':'<span class="badge badge-gray">No</span>'}</td>
+        <td>${m.available?'<span class="badge badge-green">Active</span>':'<span class="badge badge-red">Hidden</span>'}</td>
+        <td><div class="tbl-actions">
+          <button class="tbl-btn" onclick="editModel(${m.id})">Edit</button>
+          <button class="tbl-btn del" onclick="deleteModel(${m.id},'${m.name}')">Delete</button>
+        </div></td>
+      </tr>`).join('');
+  } catch(e){toast('Failed to load models','error');}
+}
+
+async function loadAppointments() {
+  try {
+    const apts=await api('/admin/appointments');
+    const tb=document.getElementById('apptsTbl');
+    if(!apts.length){tb.innerHTML='<tr><td colspan="7" class="empty">No appointments yet.</td></tr>';return;}
+    tb.innerHTML=apts.map(a=>`
+      <tr>
+        <td style="color:var(--white);font-weight:500;">${a.name}</td>
+        <td><a href="tel:${a.phone}" style="color:var(--red);text-decoration:none;">${a.phone}</a></td>
+        <td>${a.model}</td>
+        <td>${a.date}</td>
+        <td style="color:var(--dim);max-width:160px;overflow:hidden;text-overflow:ellipsis;">${a.message||'-'}</td>
+        <td>
+          <select class="status-sel" onchange="updateAppt(${a.id},this.value)">
+            ${['pending','confirmed','done','cancelled'].map(s=>`<option value="${s}" ${a.status===s?'selected':''}>${s.charAt(0).toUpperCase()+s.slice(1)}</option>`).join('')}
+          </select>
+        </td>
+        <td style="color:var(--dim);font-size:0.72rem;">${a.created_at?.split('T')[0]||a.created_at||'-'}</td>
+      </tr>`).join('');
+  } catch(e){toast('Failed to load appointments','error');}
+}
+
+async function loadEnquiries() {
+  try {
+    const enqs=await api('/admin/enquiries');
+    const tb=document.getElementById('enqTbl');
+    if(!enqs.length){tb.innerHTML='<tr><td colspan="4" class="empty">No enquiries yet.</td></tr>';return;}
+    tb.innerHTML=enqs.map(e=>`
+      <tr>
+        <td style="color:var(--white);font-weight:500;">${e.name}</td>
+        <td><a href="tel:${e.phone}" style="color:var(--red);text-decoration:none;">${e.phone}</a></td>
+        <td style="color:var(--dim);">${e.message||'-'}</td>
+        <td style="color:var(--dim);font-size:0.72rem;">${e.created_at?.split('T')[0]||'-'}</td>
+      </tr>`).join('');
+  } catch(e){toast('Failed to load enquiries','error');}
+}
+
+async function updateAppt(id, status) {
+  try { await api('/admin/appointments/'+id,'PUT',{status}); toast('Status updated'); loadStats(); }
+  catch { toast('Update failed','error'); }
+}
+
+// ── MODEL MODAL ──
+function openModelModal(model=null) {
+  document.getElementById('modalTitle').textContent = model ? 'EDIT MODEL' : 'ADD NEW MODEL';
+  document.getElementById('editId').value = model?.id || '';
+  document.getElementById('fName').value = model?.name || '';
+  document.getElementById('fType').value = model?.type || 'bike';
+  document.getElementById('fEngine').value = model?.engine || '';
+  document.getElementById('fMileage').value = model?.mileage || '';
+  document.getElementById('fWeight').value = model?.weight || '';
+  document.getElementById('fPrice').value = model?.price || '';
+  document.getElementById('fPriceNum').value = model?.price_num || '';
+  document.getElementById('fBadge').value = model?.badge || '';
+  document.getElementById('fColor').value = model?.color || '#E8001D';
+  document.getElementById('fDesc').value = model?.description || '';
+  document.getElementById('fFeatured').checked = !!model?.featured;
+  document.getElementById('fAvailable').checked = model ? !!model.available : true;
+  document.getElementById('modelModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+let editCache = {};
+async function editModel(id) {
+  try {
+    const models = await api('/admin/models');
+    const m = models.find(x=>x.id===id);
+    if (m) openModelModal(m);
+  } catch { toast('Failed to load model','error'); }
+}
+
+async function deleteModel(id, name) {
+  if (!confirm(`Delete "${name}"? This cannot be undone.`)) return;
+  try {
+    await api('/admin/models/'+id,'DELETE');
+    toast(`"${name}" deleted`); loadModels(); loadStats();
+  } catch { toast('Delete failed','error'); }
+}
+
+async function saveModel(e) {
+  e.preventDefault();
+  const id = document.getElementById('editId').value;
+  const body = {
+    name:document.getElementById('fName').value,
+    type:document.getElementById('fType').value,
+    engine:document.getElementById('fEngine').value,
+    mileage:document.getElementById('fMileage').value,
+    weight:document.getElementById('fWeight').value,
+    price:document.getElementById('fPrice').value,
+    price_num:parseInt(document.getElementById('fPriceNum').value),
+    badge:document.getElementById('fBadge').value,
+    color:document.getElementById('fColor').value,
+    description:document.getElementById('fDesc').value,
+    featured:document.getElementById('fFeatured').checked,
+    available:document.getElementById('fAvailable').checked,
+  };
+  try {
+    if (id) { await api('/admin/models/'+id,'PUT',body); toast('Model updated!'); }
+    else { await api('/admin/models','POST',body); toast('Model added!'); }
+    closeModelModalBtn(); loadModels(); loadStats();
+  } catch { toast('Save failed. Check all fields.','error'); }
+}
+
+function closeModelModal(e) { if(e.target===document.getElementById('modelModal')) closeModelModalBtn(); }
+function closeModelModalBtn() { document.getElementById('modelModal').classList.remove('open'); document.body.style.overflow=''; }
+
+// Auto-login if token exists
+if (token) {
+  api('/admin/stats').then(()=>initApp()).catch(()=>{token='';localStorage.removeItem('twinkle_token');});
+}
+</script>
+</body>
+</html>
